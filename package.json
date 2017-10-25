@@ -1,0 +1,25 @@
+{
+  "name": "njsexphb",
+  "version": "1.0.0",
+  "description": "node express handlebars",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Assignment 14\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scodingjs/njsexphb.git"
+  },
+  "keywords": [
+    "express",
+    "express-handlebars",
+    "mysql",
+    "heroku"
+  ],
+  "author": "sangeetha kp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scodingjs/njsexphb/issues"
+  },
+  "homepage": "https://github.com/scodingjs/njsexphb#readme"
+}
