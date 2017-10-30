@@ -2,7 +2,6 @@
 This server.js is initially server.js where ORM is not used.
 Uses Mysql, express handlebars, mysql */
 /* works with index.handlebars , main.handlebars */
-/* To make this work slight change of file names will be needed */
 
 var express = require("express");
 var exphbs = require("express-handlebars");
