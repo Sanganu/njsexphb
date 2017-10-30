@@ -1,4 +1,5 @@
 /node_modules/
+/log.txt/
 /server1.js/
 /index1.handlebars/
 /main1.handlebars/
