@@ -1,3 +1,9 @@
+/* This Code written by Sangeetha
+This server.js is initially server.js where ORM is not used.
+Uses Mysql, express handlebars, mysql */
+/* works with index.handlebars , main.handlebars */
+/* To make this work slight change of file names will be needed */
+
 var express = require("express");
 var exphbs = require("express-handlebars");
 var methodOverride = require("method-override");
@@ -34,7 +40,6 @@ connection.connect(function(err){
    console.log('Connected as id: '+ connection.threadId);
 });
 
-
 app.get('/',function(req,res){
   connection.query('Select * from menu;',function(err,qresults){
        if (err) console.log('Error in Connecting to database:',err);
@@ -69,8 +74,8 @@ app.delete('/delete',function(req,res)
   connection.query('DELETE FROM MENU where id = ?',
   [req.body.inmenuid],function(err,qresults)
   {
-    if (err) console.log('Unable to delete item :',err);
-    console.log('Deleted Menu item!!!');
+    if (err) console.log('Unable to update item :',err);
+    console.log('Delted Menu item!!!');
     res.redirect('/');
   });
 });
