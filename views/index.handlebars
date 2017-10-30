@@ -1,0 +1,53 @@
+<h3>Hello Chef, Ready to decide today's menu !</h3>
+<div class = "container">
+      {{#each vitems}}
+          <div class = "row">
+                  <div class = "col-lg-2">
+                       <p>{{this.id}}</p>
+                  </div>
+                  <div class = "col-lg-6">
+                      <p>{{this.item_name}}</p>
+                  </div>
+                  <div class = "col-lg-4">
+                     <form  method = "POST" autocomplete=""action = "/delete?_method=DELETE" >
+                         <input type = "hidden" name = "inmenuid" value ="{{this.id}}">
+                         <button class = "btn btn-danger" type = "submit">Delete Item</button>
+                     </form>
+                  </div>
+          </div>
+      {{/each}}
+</div>
+<div class = "container">
+      <h3>Add Item to Menu</h3>
+      <div class = "row">
+              <form method = "POST" action = "/create">
+
+                       <input type = "text" name = "inmenuitem">
+
+                       <button class = "btn btn-warning" type = "submit">New Menu Item</button>
+              
+              </form>
+      </div>
+
+      <h3>Alter Menu Item</h3>
+      <div class ="row">
+              <form method = "POST"  action="/update?_method=PUT">
+
+                      <input type = "text" name = "inmenuid" placeholder="Enter id of the item you want to change"></input>
+
+                      <input type="text" name = "inmenuitem" placeholder="Enter changes you want to make to Menu Item"></input>
+
+                       <button class = "btn btn-warning" type ="submit">Alter Menu Item</button>
+
+
+              </form>
+      </div>
+</div>
+<!--
+<h3>Delete Item</h3>
+<form method = "POST" action = "/delete?method=PUT">
+     <input type = "text" name = "inmenuid" placeholder="id">
+      <textarea type = "text" name = "inmenuitem" placeholder="Add Changes to Menu Item"></textare>
+    <button type ="submit">Delete Menu Item</button>
+</form>
+-->
