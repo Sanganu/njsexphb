@@ -39,8 +39,8 @@ else {
      });
 } ;
 
-
 /*
+
 var connection = mysql.createConnection({
   host: 'localhost',
   port: 3306,
@@ -49,13 +49,14 @@ var connection = mysql.createConnection({
   database:'restaurant'
 });
 */
+
 connection.connect(function(err){
    if (err) throw err;
    console.log('Connected as id: '+ connection.threadId);
 });
 
 app.get('/',function(req,res){
-  connection.query('Select * from menu;',function(err,qresults){
+  connection.query('Select * from MENU;',function(err,qresults){
        if (err) console.log('Error in Connecting to database:',err);
        res.render('index',{vitems:qresults});
   });
@@ -68,18 +69,20 @@ app.post('/create',function(req,res)
          [req.body.inmenuitem],function(err,qresults)
          {
            if (err) console.log("Unable to insert record in the table",err);
-           res.redirect('/');
+          res.redirect('/');
+          //location.reload();
          });
 });
 
 app.put('/update',function(req,res)
 {
-  connection.query('UPDATE menu SET item_name = ? where id = ?',
+  connection.query('UPDATE MENU SET item_name = ? where id = ?',
   [req.body.inmenuitem,req.body.inmenuid],function(err,qresults)
   {
     if (err) console.log('Unable to update item :',err);
     console.log('Update succeeded!!!');
     res.redirect('/');
+      //location.reload();
   });
 });
 
@@ -90,6 +93,7 @@ app.delete('/delete',function(req,res)
   {
     if (err) console.log('Unable to update item :',err);
     console.log('Delted Menu item!!!');
-    res.redirect('/');
+     res.redirect('/');
+      //location.reload();
   });
 });
