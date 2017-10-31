@@ -4,7 +4,8 @@
   "description": "node express handlebars",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Assignment 14\""
+    "test": "echo \"Assignment 14\"",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -28,5 +29,6 @@
     "express-handlebars": "^3.0.0",
     "method-override": "^2.3.10",
     "mysql": "^2.15.0"
-  }
+  },
+  "devDependencies": {}
 }
